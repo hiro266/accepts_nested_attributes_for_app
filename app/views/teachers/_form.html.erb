@@ -1,0 +1,16 @@
+<%= form_with(model: teacher, local: true) do |form| %>
+  <div class="field">
+    <%= form.label :name, '名前' %>
+    <%= form.text_field :name %>
+  </div>
+  <%= form.fields_for :school do |school_form| %>
+    <div class="field">
+      <%= school_form.label :name, '学校名' %>
+      <%= school_form.text_field :name %>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
